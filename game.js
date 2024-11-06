@@ -39,15 +39,25 @@ function playRound(humanSelection, computerSelection) {
     (humanSelection === "scissors" && computerSelection === "paper") ||
     (humanSelection === "paper" && computerSelection === "rock")
   ) {
-    alert("Human wins!");
+    alert("Human wins this round!");
     humanScore++;
   } else {
-    alert("Computer wins!");
+    alert("Computer wins this round!");
     computerScore++;
   }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame() {
+  for (i = 1; i <= 5; i++) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+  }
+  if (humanScore > computerScore) {
+    alert("Human wins the game!");
+  } else {
+    alert("Computer wins the game!");
+  }
+}
 
-playRound(humanSelection, computerSelection);
+playGame();
