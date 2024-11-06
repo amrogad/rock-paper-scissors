@@ -31,4 +31,23 @@ function getHumanChoice() {
   }
 }
 
+function playRound(humanSelection, computerSelection) {
+  if (humanSelection === computerSelection) {
+    alert("Draw!");
+  } else if (
+    (humanSelection === "rock" && computerSelection === "scissors") ||
+    (humanSelection === "scissors" && computerSelection === "paper") ||
+    (humanSelection === "paper" && computerSelection === "rock")
+  ) {
+    alert("Human wins!");
+    humanScore++;
+  } else {
+    alert("Computer wins!");
+    computerScore++;
+  }
+}
 
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
