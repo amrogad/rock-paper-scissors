@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
   // Math.random(); generates a number between 0 and 1 for example: 0.33453452
   // We multiply that number by 3 so we can get a value of 0.345743, 1.34536 or 2.342576
@@ -13,3 +16,19 @@ function getComputerChoice() {
       return "scissors";
   }
 }
+
+function getHumanChoice() {
+  let userChoice = prompt("Choose Rock, Paper or Scissors").toLowerCase();
+  if (
+    userChoice === "rock" ||
+    userChoice === "paper" ||
+    userChoice === "scissors"
+  ) {
+    return userChoice;
+  } else {
+    alert("Invalid choice!");
+    return getHumanChoice();
+  }
+}
+
+
